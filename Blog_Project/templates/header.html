@@ -1,0 +1,518 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <style>
+/* login.html style starts here  */
+          /* body {
+            background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/10/galaxy-dark-space-4k_1540136247.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .container {
+            color: white;
+        }
+
+        .form_style {
+            border: 1px solid white;
+            border-radius: 25px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form_style h5 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .form_style .form-control {
+            border-radius: 20px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+        }
+
+        .form_style .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .form_style .btn {
+            background-color: #ff5722;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .form_style .btn:hover {
+            background-color: #ff7043;
+            transform: scale(1.05);
+        }
+
+        .form_style .alert {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .form_style .form-text {
+            font-size: 14px;
+            color: #ff7043;
+        }
+
+        .form_style a {
+            color: #ff5722;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .form_style a:hover {
+            text-decoration: underline;
+        }
+ */
+
+/* login.html style ends here   */
+
+/* header style starts here  */
+.bg_header {
+    padding: 13px 0;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #F96E2A, #ccdd6e); /* Gradient Background */
+    border-radius: 13px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  }
+
+  .bg_header:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    transition-duration: 0.8s;
+    /* background: linear-gradient(135deg, #ccdd6e , #F96E2A);  */
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff !important;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-brand:hover {
+    color: #FFDDC1 !important; /* Highlight brand color */
+  }
+
+  .nav-item {
+    font-size: 18px;
+    
+    font-weight: 500;
+    margin-left: 20px;
+    padding: 5px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-item:hover {
+    color: #FFDDC1;
+    /*background-color: #dcf88f; */  /* Soft hover background */
+    border-radius: 10px;
+    transform: scale(1.1);
+    text-decoration: none;
+  }
+
+  .btn-outline-success {
+    border-radius: 25px;
+    background-color: #03847d;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-outline-success:hover {
+    background-color: #2a9d8f; /* Change color on hover */
+  } 
+
+
+/* header style ends here  */
+  
+
+/* home page style starts */
+.hero-section {
+      background: url("{% static 'images/blog-bg.png' %}");
+      margin: 0 20px; 
+      border-radius: 10px;
+      background-size: cover;
+      color: white;
+      padding: 60px 0;
+}
+
+
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+    }
+
+    .blog-post-card {
+      margin-bottom: 30px;
+    }
+
+    .blog-post-card img {
+      height: 300px;
+      object-fit: cover;
+    }
+/* home page style ends here  */
+
+
+
+
+/* myblogs.html style starts here  */
+        /* Blog post card */
+        .blog-post {
+            background-color: #ffffff;
+            margin-top: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        /* Blog post title styling */
+        .blog-post h2 {
+            color: #333;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        /* Blog post metadata styling */
+        .blog-meta {
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        /* Blog post image styling */
+        .blog-image {
+            max-width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Blog content styling */
+        .blog-content {
+            margin-top: 20px;
+            color: #495057;
+            font-size: 1.1rem;
+        }
+
+        /* Category badge styling */
+        .category {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Add spacing between sections */
+        .blog-post-card {
+            margin-bottom: 30px;
+        }
+
+        /* Add hover effect for blog post cards */
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease-in-out;
+        }
+/* myblogs.html style ends   */
+
+
+
+/* subscribe.html style starts here  */
+.pricing-header {
+            text-align: center;
+            
+        }
+        .pricing-header h1 {
+            font-size: 3rem;
+            color: #343a40;
+            font-weight: 400;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .pricing-header p {
+          margin-top: -20px;
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+        .pricing-section{
+          margin-top: -30px;
+        }
+        .plan-card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+
+        .card-price {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-subscribe {
+            font-size: 1.2rem;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+            color: #495057;
+        }
+
+        .feature-list li i {
+            margin-right: 8px;
+        }
+
+        .checkmark {
+            color: #28a745;
+        }
+
+        .crossmark {
+            color: #dc3545;
+        }
+
+        .pricing-section {
+            padding: 5rem 0;
+            background-color: #ffffff;
+        }
+
+        .plan-header {
+            font-size: 1.5rem;
+            color: #6c757d;
+        }
+
+        .pricing-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 3rem;
+            background-color: #f1f5f8;
+        }
+
+        .btn-subscribe:hover {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+          
+            
+        }
+/* subscribe.html style ends here  */
+
+
+
+
+/* my profile style starts  */
+.profile-container {
+            padding-top: 30px;
+        }
+
+        .profile-card {
+            background: #ffffff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .profile-card:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 115px;
+            border-radius: 50%;
+            margin-top: 20px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            color: #6c757d;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-details {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .profile-details h5 {
+            font-size: 1.2rem;
+            color: #343a40;
+            margin-bottom: 10px;
+        }
+
+        .profile-details p {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .subscription-plan {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .badge-premium {
+            background-color: #ffc107;
+            color: #212529;
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+       
+/* myprofile style ends here  */
+
+
+
+
+/* footer style starts */
+    footer {
+      /* background-color: #BEC6A0; */
+      background-color: #F96E2A;
+      color: white;
+      padding: 15px 0;
+      margin-top: 30px;
+      border-radius: 20px;
+      /* margin: 0, 10px; */
+    }
+    .bi{
+      margin: 0px 6px;
+      color: white;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .bi:hover {
+      color: #0d0c0c; /* Color on hover */
+      transform: scale(1.5); /* Enlarge on hover */
+      }
+/* footer style ends */
+
+
+</style>
+</head>
+
+
+
+<body class="bg_body" >
+  <div class="container">
+    <!-- Navbar Section Start -->
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-light bg_header">
+          <div class="container-fluid">
+            <!-- Brand Logo -->
+            <a href="/home"><img src="{% static 'images/blog_logo.png' %}" alt="" height="35px" width="35px" class="mx-2"></a>
+            <a class="navbar-brand mx-2" href="/home"><strong>Blog-Crafters</strong></a>
+            <!-- Navbar Toggler for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/exploreblog">Explore</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/postblog">Post</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/subscribe">Subscribe</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/aboutus">About us</a>
+                </li>
+
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="/myblogs">MyBlogs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/myprofile"><i class="bi bi-person-circle" style="color: rgb(54, 54, 54);"></i></a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
+                {% endif %}
+               
+              </ul>
+
+              <!-- Search Form -->
+              <!-- <form class="d-flex" method="get" action="/search">
+                <input class="form-control me-2" type="search" name="srch" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form> -->
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar Section End -->
+  </div>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<div class="container">
+    <header class="pricing-header">
+        <h1>Choose Your Perfect Plan</h1>
+        <p>Flexible pricing options designed for bloggers, authors, and content creators. Select the one that fits your needs!</p>
+    </header>
+
+    <section class="pricing-section">
+        <div class="row">
+            <!-- Basic Plan -->
+             {% for i in data %}
+            <div class="col-md-4">
+                <div class="plan-card shadow-md">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">{{i.sub_plan}}</h3>
+                        <p class="card-price">Rs.{{i.price}}/month</p>
+                        {% comment %} <p class="plan-header">For individuals starting their blogging journey</p> {% endcomment %}
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check2"></i> Post up to {{i.no_of_post}} blog entries</li>
+                            <li><i class="bi bi-check2"></i> Email support</li>
+                            <li><i class="bi bi-check2 checkmark"></i> 5 GB of storage</li>
+                            <li><i class="bi bi-check2 crossmark"></i> Access to analytics dashboard</li>
+                        </ul>
+                        <a href="/pay/{{i.id}}" class="btn btn-primary btn-subscribe">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock 'main' %}

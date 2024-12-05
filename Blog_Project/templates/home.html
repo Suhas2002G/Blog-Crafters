@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center mt-3">
+    <div class="container">
+      <h1>Welcome to the Blog-Crafters</h1>
+      <p>Discover the latest articles, tutorials, and guides on various topics.</p>
+      <a href="/exploreblog" class="btn btn-light btn-lg mt-3">Explore Now</a>
+    </div>
+  </section>
+
+  <!-- Blog Posts Section -->
+  <div class="container my-3">
+    <div class="row">
+       <!-- Filter Sidebar (Left Column) -->
+    <div class="col-md-3">
+      <div class="bg-light p-4 shadow rounded-3">
+        <h4>Filters</h4>
+        
+        <!-- Category Filter -->
+        <div class="mb-4">
+          <h5>Category</h5>
+          <form method="GET" action="#">
+            <select class="form-select" name="category" onchange="this.form.submit()">
+              <option value="">All Categories</option>
+              <option value="Technology">Technology</option>
+              <option value="Health">Health</option>
+              <option value="Lifestyle">Lifestyle</option>
+              <option value="Travel">Travel</option>
+              <option value="Education">Education</option>
+              <!-- Add more categories as needed -->
+            </select>
+          </form>
+        </div>
+
+        <!-- Sorting Filter -->
+        <div class="mb-4">
+          <h5>Sort By</h5>
+          <form method="GET" action="#">
+            <select class="form-select" name="sort_by" onchange="this.form.submit()">
+              <option value="date">Date</option>
+              <option value="popularity">Popularity</option>
+              <option value="title">Title</option>
+            </select>
+          </form>
+        </div>
+
+        <!-- Author Filter (Optional) -->
+        <div class="mb-4">
+          <h5>Filter by Author</h5>
+          <form method="get" action="/search">
+            <input type="text" class="form-control" name="srch" placeholder="Search Author">
+            <button type="submit" class="btn btn-primary mt-4 w-100">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+ <!-- Blog Posts Section (Right Column) -->
+ <div class="col-md-9">
+  <div class="row">
+    <!-- Blog Post Card starts -->
+     {% for i in data %}
+    <div class="col-md-6 ">
+      <div class="card blog-post-card shadow">
+        <img src="{{i.image.url}}" class="card-img-top p-2" alt="Blog Post Image">
+        <div class="card-body">
+          <h5 class="card-title">{{i.title}}</h5>
+          <p><small class="text-muted">Author : {{i.author.first_name}} | {{i.created_at}}</small></p>
+          <p class="card-text">{{i.content}}</p>
+          
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <!-- Blog Post ends here -->
+    </div>
+  </div>
+{% endblock 'main' %}
+

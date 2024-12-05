@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+{% for i in data %}
+<div class="container profile-container">
+        <!-- Profile Card -->
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="profile-card">
+                    <!-- Profile Header -->
+                    <div class="profile-header">
+                        <div class="profile-avatar mx-auto">
+                            <i class="bi bi-person-circle" style="font-size: 80px; color: #6c757d;"></i>
+                        </div>
+                        <h2 class="mt-3">{{i.aid.first_name}}</h2>
+                        <p>{{i.aid.email}}</p>
+                        <span class="badge badge-premium">Subscription Plan : {{i.sub_plan.sub_plan}}</span>
+                    </div>
+
+                    <!-- Profile Details -->
+                    <!-- <div class="profile-details">
+                        <h5><i class="bi bi-person-fill"></i> Name</h5>
+                        <p>{{i.aid.first_name}}</p>
+                        
+                        <h5><i class="bi bi-envelope-fill"></i> Email</h5>
+                        <p>{{i.aid.email}}</p>
+                        
+                        <h5><i class="bi bi-card-checklist"></i> Subscription Plan</h5>
+                        <p class="subscription-plan">{{i.sub_plan.sub_plan}}</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+
+
+
+
+
+
+{% endblock 'main' %}

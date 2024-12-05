@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/10/galaxy-dark-space-4k_1540136247.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .form-style {
+            border: 1px solid white;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        .form-style h5 {
+            color: #f8d7da;
+        }
+        .form-label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .btn-danger {
+            margin-top: 10px;
+            background-color: #ff5722;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn-danger:hover {
+            background-color: #ff7043;
+        }
+        .alert {
+            border-radius: 10px;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .form-text {
+            color: #d6d6d6;
+        }
+        .text-center {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mx-auto shadow p-3 mt-5 form-style">
+                {% if errormsg %}
+                    <div class="alert alert-danger" role="alert">
+                        {{errormsg}}
+                    </div>
+                {% endif %}
+
+                {% if success %}
+                    <div class="alert alert-success" role="alert">
+                        {{success}}
+                    </div>
+                {% endif %}
+
+                <center><h5>User Registration</h5></center>
+                <hr>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-2">
+                        <label for="Input1" class="form-label">Name:</label>
+                        <input type="text" name="uname" class="form-control" id="Input1" required>
+                    </div>
+                    
+                    <div class="mb-2">
+                        <label for="Input2" class="form-label">Email:</label>
+                        <input type="email" name="uemail" class="form-control" id="Input2" required>
+                    </div>
+                    
+                    <div class="mb-2">
+                        <label for="Input3" class="form-label">Password:</label>
+                        <input type="password" name="upass" class="form-control" id="Input3" required>
+                        
+                    </div>
+                    
+                    <div class="mb-2">
+                        <label for="Input4" class="form-label">Confirm Password:</label>
+                        <input type="password" name="ucpass" class="form-control" id="Input4" required>
+                    </div>
+
+                    <div class="mb-2">
+                        <input type="submit" value="Register" class="btn btn-danger w-100">
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        Already have an account? <a href="/login" style="color: #f8d7da;">Login here</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+</body>
+</html>
