@@ -13,7 +13,9 @@
                 <li><strong>Blog Management:</strong> Add, edit, and delete blog posts with submission timestamps.</li>
                 <li><strong>Responsive Design:</strong> Optimized for all devices.</li>
                 <li><strong>Search and Filter:</strong> Easily find blogs by title or content.</li>
-            </ul>
+                <li><strong> Subscription Integration:</strong> Razorpay API integration allows users to subscribe to the platform, ensuring a seamless payment process for premium content or features.</li>
+                
+</ul>
         </section>
         <section>
             <h2>Technology Stack</h2>
